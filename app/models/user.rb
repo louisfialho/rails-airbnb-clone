@@ -5,11 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :reviews
-  has_many :flats, through: :reviews
+  has_many :reviewed_flats, through: :reviews, source: :flat
 
   has_many :bookings
-  has_many :flats, through: :bookings
-
-  has_many :listings
-  has_many :flats, through: :listings
+  has_many :booked_flats, through: :bookings, source: :flat
 end

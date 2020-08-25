@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_25_103828) do
+ActiveRecord::Schema.define(version: 2020_08_25_140802) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,15 +31,8 @@ ActiveRecord::Schema.define(version: 2020_08_25_103828) do
     t.integer "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "listings", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "flat_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["flat_id"], name: "index_listings_on_flat_id"
-    t.index ["user_id"], name: "index_listings_on_user_id"
+    t.bigint "host_id", null: false
+    t.index ["host_id"], name: "index_flats_on_host_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -67,8 +60,7 @@ ActiveRecord::Schema.define(version: 2020_08_25_103828) do
 
   add_foreign_key "bookings", "flats"
   add_foreign_key "bookings", "users"
-  add_foreign_key "listings", "flats"
-  add_foreign_key "listings", "users"
+  add_foreign_key "flats", "users", column: "host_id"
   add_foreign_key "reviews", "flats"
   add_foreign_key "reviews", "users"
 end
