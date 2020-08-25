@@ -7,101 +7,28 @@
 
 <div class ="container">
   <div class="d-flex justify-content-around">
-  <div class="card" style="width: 18rem;">
-    <img src="https://images.unsplash.com/photo-1513377888081-794d8e958972?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Lisbon</h5>
-      <p class="card-text">Find your beautiful flat in Lisbon.</p>
-      <a href="#" class="btn btn-primary">See apartments</a>
-    </div>
-  </div>
-
-  <div class="card" style="width: 18rem;">
-    <img src="" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Rom</h5>
-      <p class="card-text">Find your beautiful flat in Rom.</p>
-      <a href="#" class="btn btn-primary">See apartments</a>
-    </div>
-  </div>
-
-
-  <div class="card" style="width: 18rem;">
-    <img src="" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Athen</h5>
-      <p class="card-text">Find your beautiful flat in Athen</p>
-      <a href="#" class="btn btn-primary">See apartments</a>
-    </div>
-  </div>
+   <%= render 'shared/card', title: "Lisbon", text: "Find your beautiful flat in Lisbon", url: "https://images.unsplash.com/photo-1513377888081-794d8e958972?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" %>
+   <%= render 'shared/card', title: "Porto", text: "Find your beautiful flat in Porto", url: "https://images.unsplash.com/photo-1555881400-89d5a9c86668?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" %>
+   <%= render 'shared/card', title: "Prague", text: "Find your beautiful flat in Prague", url: "https://images.unsplash.com/photo-1560950340-5e6064fce41a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" %>
   </div>
 </div>
 
 <div class ="container">
   <div class="d-flex justify-content-around">
-  <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-
-  <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-
-
-  <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
+   <%= render 'shared/card', title: "London", text: "Find your beautiful flat in London", url: "https://images.unsplash.com/photo-1505761671935-60b3a7427bad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" %>
+   <%= render 'shared/card', title: "New York", text: "Find your beautiful flat in New York", url: "https://images.unsplash.com/photo-1522083165195-3424ed129620?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" %>
+   <%= render 'shared/card', title: "Los Angeles", text: "Find your beautiful flat in Los Angeles", url: "https://images.unsplash.com/photo-1523595857-fe9ee689f76f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" %>
   </div>
 </div>
+
 
 <div class ="container">
   <div class="d-flex justify-content-around">
-  <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-
-  <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-
-
-  <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
+   <%= render 'shared/card', title: "Miami", text: "Find your beautiful flat in Miami", url: "https://images.unsplash.com/photo-1506966953602-c20cc11f75e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" %>
+   <%= render 'shared/card', title: "Berlin", text: "Find your beautiful flat in Berlin", url: "https://images.unsplash.com/photo-1560930950-5cc20e80e392?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" %>
+   <%= render 'shared/card', title: "Munich", text: "Find your beautiful flat in Munich", url: "https://images.unsplash.com/photo-1554222413-74348b32d66e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" %>
   </div>
 </div>
-
-
 
 
 <div class="footer">
