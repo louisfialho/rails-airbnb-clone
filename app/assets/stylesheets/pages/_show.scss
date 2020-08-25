@@ -2,9 +2,12 @@
   margin-bottom: 4px !important;
 }
 
-.short-description h5  {
+.border-bottom h1 {
   display: inline-block;
-  margin-left: 20px;
+}
+
+.border-bottom h3 {
+  display: inline-block;
 }
 
 .short-description {
@@ -19,7 +22,21 @@
     border-bottom: 1px solid #dee2e6 !important;
 }
 
-
 #confirmation-card {
   border-radius: 5px 5px 0px 0px;
+}
+
+.card-description {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    margin-top: 20px;
 }
