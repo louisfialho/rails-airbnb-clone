@@ -1,7 +1,25 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Flat.destroy_all
+
+puts "Creating flats..."
+
+flat = Flat.new(title: "Bairro Alto flat", description: "Really nice flat in Bairro Alto", location: "Lisbon", price: 100, image_url: "https://d1bvpoagx8hqbg.cloudfront.net/originals/amazing-view-lisbon-centre-34e852280371ff86cefa5b457c1dcb85.jpg")
+flat.save!
+
+flat = Flat.new(title: "Belem flat", description: "Really nice flat in Belem", location: "Lisbon", price: 100, image_url:"https://thespaces.com/wp-content/uploads/2017/01/Lisbon-apartments-for-rent-Baixa-House-1.jpg")
+flat.save!
+
+flat = Flat.new(title: "Chiado flat", description: "Really nice flat in Chiado", location: "Lisbon", price: 100, image_url:"https://d1bvpoagx8hqbg.cloudfront.net/originals/sunny-flat-heart-lisbon-207180cf4f84f05e668755d0f82ee94b.jpg")
+flat.save!
+
+flat = Flat.new(title: "Principe Real flat", description: "Really nice flat in Principe Real", location: "Lisbon", price: 100, image_url:"https://thespaces.com/wp-content/uploads/2017/01/Lisbon-apartments-for-rent-Baixa-House.jpg")
+flat.save!
+
+flat = Flat.new(title: "Baixa flat", description: "Really nice flat in Baixa", location: "Lisbon", price: 100, image_url: "https://a0.muscache.com/im/pictures/29be0469-56ab-456d-baeb-52cb13b81ad8.jpg?aki_policy=xx_large")
+flat.save!
+
+flat = Flat.new(title: "Marques de Pombal flat", description: "Really nice flat in Marques de Pombal", location: "Lisbon", price: 100, image_url: "https://dqav65i4xqidd.cloudfront.net/app/uploads/20180519094708/t2-sete-rios-2.png")
+flat.save!
+
+puts 'Finished!'
+
+
