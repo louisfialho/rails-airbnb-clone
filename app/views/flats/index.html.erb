@@ -1,5 +1,5 @@
 <ul>
   <% @flats.each do |flat| %>
-    <li><%= flat.name %></li>
+    <li><%= link_to flat["title"], flat_path(flat["id"]) %></li>
   <% end %>
 </ul>
