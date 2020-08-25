@@ -9,4 +9,6 @@ class User < ApplicationRecord
 
   has_many :bookings
   has_many :booked_flats, through: :bookings, source: :flat
+
+  has_many :flats
 end
