@@ -10,7 +10,11 @@ class BookingsController < ApplicationController
     @booking.flat = @flat
     @booking.user = current_user
     if @booking.save
-        redirect_to flat_path(@flat)
+       # session[:price] = @flat.price * (@booking.end_date - @booking.start_date + 1)
+       # session[:check_in] = @booking.start_date
+       # session[:check_out] = @booking.end_date
+       # session[:flat_name] = @flat.title
+       redirect_to flat_path(@flat)
     else
       render :new
     end
