@@ -57,11 +57,55 @@
 
           </div>
 
+
+
+
+
+
+
+
           <div class="card-description p-3 mb-3">
             <h4> Reviews: </h4>
             <p>Something Something</p>
-
           </div>
+
+          <div class="list-group">
+            <% @flat.reviews.each do |review| %>
+              <li class="list-group-item">
+                <small>
+                  <% count = 0 %>
+                  <% 5.times do %>
+                    <% if review.rating > count %>
+                      <i class="fas fa-star"></i>
+                    <% else %>
+                      <i class="far fa-star"></i>
+                    <% end %>
+                    <% count += 1 %>
+                  <% end %>
+                </small>
+                <p><%= review.text %></p>
+              </li>
+            <% end %>
+          </div>
+
+          <%= simple_form_for [@flat, @review] do |f| %>
+            <%= f.input :rating, collection: 0..5 %>
+            <%= f.input :text %>
+            <%= f.submit class: 'btn btn-primary' %>
+          <% end %>
+          <%= link_to "See all flats", flats_path %>
+
+
+
+
+
+
+
+
+
+
+
+
       </div>
     </div>
 
