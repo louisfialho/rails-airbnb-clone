@@ -25,6 +25,9 @@ flat.save!
 flat = Flat.new(host:sean, title: "Marques de Pombal flat", description: "Really nice flat in Marques de Pombal", location: "Lisbon", price: 100, image_url: "https://dqav65i4xqidd.cloudfront.net/app/uploads/20180519094708/t2-sete-rios-2.png")
 flat.save!
 
+review1 = Review.new(text:"amazing stunning flat", user:sean, flat:bairro)
+review1.save
+
 puts 'Finished!'
 
 

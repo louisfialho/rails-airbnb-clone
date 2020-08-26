@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :flats, only: [:index, :show, :create] do
-    resources: :reviews, only: [:create]
+    resources :reviews, only: [:show, :create]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

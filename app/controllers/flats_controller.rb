@@ -4,7 +4,8 @@ class FlatsController < ApplicationController
     @flats = Flat.all
   end
 
-   def show
+  def show
     @flat = Flat.find(params[:id])
+    @review = Review.new
   end
 end
