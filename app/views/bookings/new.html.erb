@@ -1,0 +1,7 @@
+<div class="container justify-content-center">
+  <%= simple_form_for [@flat, @booking ] do |f| %>
+    <%= f.input :start_date, as: :date, html5: true %>
+    <%= f.input :end_date, as: :date, html5: true %>
+    <%= f.submit "Book now", class: "btn btn-success" %>
+<% end %>
+</div>
