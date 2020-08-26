@@ -50,6 +50,13 @@
           <%end%>
         </div>
 
+        <% if @flat.bookings.any? { |booking| booking.user == current_user} %>
+          <div class="card-description p-3 mb-3">
+            <h4> Booking was successfull! 😎🤘</h4>
+            <h5> See details: </h5>
+            <p> You have booked from <%= @flat.bookings.where(user: current_user).last.start_date%></p>
+          </div>
+        <% end %>
 
           <div class="card-description p-3 mb-3">
             <h4> Description </h4>
