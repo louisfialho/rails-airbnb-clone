@@ -9,7 +9,7 @@
     </button>
     <%= simple_form_for :search, url: flats_path, method: "GET", html: { class: 'form-inline' } do |f| %>
     <form class="form-inline">
-        <%= f.input :location, label: false, input_html: {value: "" }, placeholder: "Location", class: "mr-sm-2 first-box" %>
+        <%= f.input :location, label: false, input_html: {value: "" }, placeholder: "Location", class: "form-control mr-sm-2" %>
         <input class="form-control mr-sm-2" type="date" placeholder="Check in" aria-label="Search">
         <input class="form-control mr-sm-2" type="date" placeholder="Check out" aria-label="Search">
         <select class="form-control mr-sm-2" type="search">
