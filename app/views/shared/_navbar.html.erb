@@ -7,9 +7,9 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
+    <%= simple_form_for :search, url: flats_path, method: "GET", html: { class: 'form-inline' } do |f| %>
     <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="City" aria-label="Search">
+        <%= f.input :location, label: false, input_html: {value: "" }, placeholder: "Location", class: "form-control mr-sm-2" %>
         <input class="form-control mr-sm-2" type="date" placeholder="Check in" aria-label="Search">
         <input class="form-control mr-sm-2" type="date" placeholder="Check out" aria-label="Search">
         <select class="form-control mr-sm-2" type="search">
@@ -20,7 +20,8 @@
           <option value="">4</option>
           <option value="">4+</option>
         </select>
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <%= f.submit "Search", class: 'btn btn-outline-success my-2 my-sm-0'%>
+        <%end%>
     </form>
 
 
