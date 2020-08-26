@@ -1,6 +1,8 @@
 Flat.destroy_all
 User.destroy_all
 
+require 'faker'
+
 puts "Creating flats..."
 
 sean = User.new(name:"Sean", role:"visitor", email:"a@gmail.com", password:"abc123")
