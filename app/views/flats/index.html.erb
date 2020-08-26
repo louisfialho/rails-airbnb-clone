@@ -2,9 +2,11 @@
     <div class="flats-container">
        <% @flats.each do |flat| %>
        <div class="flat">
-       <%= render 'shared/carousel', flat_id: flat.id, url1: "https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60", url2: "https://images.unsplash.com/photo-1540518614846-7eded433c457?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60", url3: "https://images.unsplash.com/photo-1565183928294-7063f23ce0f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" %>
-         <h5><%= flat.title %></h5>
-         <%= link_to "Check details", flat_path(flat), class: "btn btn-success btn-sm" %>
+           <%= render 'shared/carousel', flat_id: flat.id, url1: "https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60", url2: "https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60", url3: "https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" %>
+           <i class="fas fa-star"></i>
+           <h5><%= flat.title %> - <%= flat.location %></h5>
+           <p><strong>€<%=flat.price%></strong> / night</p>
+           <%= link_to "Check details", flat_path(flat), class: "btn btn-success btn-sm" %>
        </div>
       <% end %>
     </div>
