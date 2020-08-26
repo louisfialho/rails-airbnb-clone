@@ -31,7 +31,20 @@ ActiveRecord::Schema.define(version: 2020_08_25_141033) do
     t.integer "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "host_id", null: false
     t.string "image_url"
+    t.index ["host_id"], name: "index_flats_on_host_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "text"
+    t.integer "rating"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"
+    t.bigint "flat_id"
+    t.index ["flat_id"], name: "index_reviews_on_flat_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -61,6 +74,7 @@ ActiveRecord::Schema.define(version: 2020_08_25_141033) do
 
   add_foreign_key "bookings", "flats"
   add_foreign_key "bookings", "users"
+  add_foreign_key "flats", "users", column: "host_id"
   add_foreign_key "reviews", "flats"
   add_foreign_key "reviews", "users"
 end
