@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2020_08_27_153127) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "host_id", null: false
     t.string "image_url"
+    t.integer "capacity"
     t.index ["host_id"], name: "index_flats_on_host_id"
   end
 

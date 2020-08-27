@@ -1,13 +1,37 @@
 <div class ="container">
 
     <div class="filters">
-      <button type="button" id="first-filter" class="btn btn-outline-secondary">Price <50€</button>
-      <button type="button" class="btn btn-outline-secondary">Price <100€</button>
-      <button type="button" class="btn btn-outline-secondary">Price <150€</button>
-      <button type="button" class="btn btn-outline-secondary">Price <200€</button>
+      <button type="button" id="price-filter" class="btn btn-outline-secondary">Price</button>
     </div>
 
     <br>
+
+    <div class="card text-center" id="price-card" style="display: none">
+      <div class="card-body">
+        <h5 class="card-title">The average price per night is 55€</h5>
+
+        <div class="dual-input">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Minimum price</span>
+            </div>
+            <input type="text" class="form-control" id="minimum-price">
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Maximum price</span>
+            </div>
+            <input type="text" class="form-control" id="maximum-price">
+          </div>
+        </div>
+
+        <button type="button" id="save" class="btn btn-dark">Save</button>
+      </div>
+    </div>
+
+    <br>
+
 
     <div class="flats-container">
        <% @flats.each do |flat| %>
