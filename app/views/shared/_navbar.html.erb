@@ -13,7 +13,7 @@
         <%= f.input :location, label: false, input_html: {value: "" }, placeholder: "Location", class: "form-control mr-sm-2" %>
         <input class="form-control mr-sm-2" type="date" placeholder="Check in" aria-label="Search">
         <input class="form-control mr-sm-2" type="date" placeholder="Check out" aria-label="Search">
-        <%= f.input :capacity, class: "form-control mr-sm-2", label: false, input_html: {value: "" }, collection: (1..5) %>
+        <%= f.input :capacity, input_html: { class: "recognitionStyling form-control mr-sm-2" }, prompt: "Guests", collection: (1..5), label: false %>
         <%= f.submit "Search", class: 'btn btn-outline-success my-2 my-sm-0'%>
         <%end%>
     </form>
