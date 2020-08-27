@@ -97,7 +97,7 @@
   <div class="col-md-4">
           <!-- checkout -->
           <div class="bg-white border p-3 sticky-top" id="confirmation-card">
-              <%= link_to "Go to Booking",  new_flat_booking_path(@flat), class: "btn btn-outline-success w-100" %>
+              <%= link_to "Go to Booking",  new_flat_booking_path(@flat, check_in: @check_in, check_out: @check_out), class: "btn btn-outline-success w-100" %>
 
             <div class="d-flex justify-content-between mt-3">
               <p><strong>Nights</strong></p>
