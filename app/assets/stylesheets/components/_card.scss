@@ -3,7 +3,7 @@
 }
 
 .card {
-  border-radius: 25px;
+  border-radius: 25px 25px 6px 6px;
 }
 
 
@@ -11,4 +11,13 @@
     border-radius: 25px 25px 0px 0px;
 }
 
+.card-booking .col-3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+#card-booking {
+  border-radius: 4px 4px 0px 0px;
+  padding: 50px;
+}
