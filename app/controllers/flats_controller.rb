@@ -3,8 +3,13 @@ class FlatsController < ApplicationController
     @flats = Flat.all
     if search_params.present?
       @location = search_params["location"]
-      @capacity = search_params["capacity"].to_i
-      @flats = Flat.where("location ILIKE ? AND capacity = ?", @location, @capacity)
+
+      if search_params["capacity"].present?
+        @capacity = search_params["capacity"].to_i
+        @flats = Flat.where("location ILIKE ? AND capacity = ?", @location, @capacity)
+      else
+        @flats = Flat.where("location ILIKE ?", @location)
+      end
     end
   end
 
