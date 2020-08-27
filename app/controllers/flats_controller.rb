@@ -1,6 +1,9 @@
 class FlatsController < ApplicationController
   def index
     @flats = Flat.all
+    @check_in = Date.today.strftime("%Y-%m-%d")
+    @check_out = (Date.today + 3).strftime("%Y-%m-%d")
+
     if search_params.present?
       @location = search_params["location"]
       @check_in = search_params["check_in"]
@@ -17,6 +20,13 @@ class FlatsController < ApplicationController
   def show
     @flat = Flat.find(params[:id])
     @review = Review.new
+    if params[:check_in].present? && params[:check_out].present?
+      @check_in = params[:check_in]
+      @check_out = params[:check_out]
+    else
+      @check_in = Date.today.strftime("%Y-%m-%d")
+      @check_out = (Date.today + 3).strftime("%Y-%m-%d")
+    end
   end
 
   private

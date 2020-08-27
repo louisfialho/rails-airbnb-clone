@@ -8,9 +8,9 @@
           <div class="justify-content-center">
             <%= simple_form_for [@flat, @booking ] do |f| %>
               <h4>Start Date</h4>
-              <%= f.input :start_date, as: :date, html5: true, label: false %>
+              <%= f.input :start_date, as: :date, html5: true, label: false, input_html: { value: @check_in } %>
               <h4>End Date </h4>
-              <%= f.input :end_date, as: :date, html5: true, label: false %>
+              <%= f.input :end_date, as: :date, html5: true, label: false, input_html: { value: @check_out } %>
               <%= f.submit "Book now", class: "btn btn-outline-success w-100" %>
             <% end %>
           </div>
