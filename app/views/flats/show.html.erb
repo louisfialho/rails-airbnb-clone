@@ -83,7 +83,6 @@
 
           </div>
 
-
           <!-- review form -->
           <%= simple_form_for [@flat, @review] do |f| %>
             <%= f.input :rating, collection: 0..5, label: "Leave a Rating"%>
@@ -91,15 +90,21 @@
             <%= f.submit class: 'btn btn-primary' %>
           <% end %>
 
-
           <!-- list the reviews -->
           <div class='list-group thin-border-top mt-5 mb-5'>
             <% if @flat.reviews.count != 0 %>
               <h3 class="mt-5" >Reviews</h3>
               <% @flat.reviews.reverse.each do |review| %>
                 <li class="list-group-item mt-3">
+                  <!-- Reviewer avatar -->
+                  <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
 
+                  <!-- Reviewer name -->
+                  <%= review.user.name  %>
 
+                  <!-- Review Date -->
+                  <%= Time.new.strftime("%B, %Y")%>
+                  <!-- Review Rating -->
                   <small>
                     <% count = 0 %>
                     <% 5.times do %>
@@ -117,8 +122,7 @@
                       <% count += 1 %>
                     <% end %>
                   </small>
-
-
+                  <!-- Review text -->
                   <p><%= review.text %></p>
                 </li>
               <% end %>
@@ -126,13 +130,6 @@
               <h3 class="mt-5" >No Reviews</h3>
             <% end %>
           </div>
-
-
-
-
-
-
-
       </div>
     </div>
 
