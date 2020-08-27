@@ -1,6 +1,6 @@
 class Flat < ApplicationRecord
   # skip_before_action :authenticate_user!, only: :home
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
   has_many :reviewed_users, through: :reviews, source: :user
 
   has_many :bookings
