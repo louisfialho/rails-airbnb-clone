@@ -3,8 +3,9 @@ class FlatsController < ApplicationController
     @flats = Flat.all
     if search_params.present?
       @location = search_params["location"]
-      @start_date = search_params["start_date"]
-      @end_date = search_params["end_date"]
+      @check_in = search_params["check_in"]
+      @check_out = search_params["check_out"]
+      raise
       if search_params["capacity"].present?
         @capacity = search_params["capacity"].to_i
         @flats = Flat.where("location ILIKE ? AND capacity = ?", @location, @capacity)
@@ -22,6 +23,6 @@ class FlatsController < ApplicationController
   private
 
   def search_params
-    params.require(:search).permit(:location, :capacity, :start_date, :end_date)
+    params.require(:search).permit(:location, :capacity, :check_in, :check_out)
   end
 end
