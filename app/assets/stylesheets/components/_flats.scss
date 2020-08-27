@@ -1,14 +1,23 @@
 .main-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  margin: 16px;
 }
 
 #map {
-height: 100vh;
+height: 88vh;
+position: sticky;
+top: 80px;
 }
 
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 16px;
   flex-grow: 1;
+  margin-right: 16px;
+}
+
+.filters {
+  margin: 16px;
 }
