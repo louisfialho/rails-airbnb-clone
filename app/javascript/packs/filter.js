@@ -19,6 +19,9 @@ export function filter() {
           if (flat.dataset.price > max.value || flat.dataset.price < min.value ) {
             flat.style.display = "none";
           }
+
+          filter.innerHTML = `${min.value}€ - ${max.value}€`;
+
         });
 
       });
