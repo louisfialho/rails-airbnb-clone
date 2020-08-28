@@ -68,6 +68,23 @@
 
 
     <br>
+    <div class="flats-container">
+      <% @flats.each do |flat| %>
+      <div data-price='<%=flat.price%>' data-type='<%=flat.flat_type%>' class="flat">
+        <div class="card-trip">
+          <%= render 'shared/carousel', flat_id: flat.id, url1: "https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60", url2: "https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60", url3: "https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" %>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= flat.title %> - <%= flat.location %></h2>
+              <p>Best place in the world to come to!</p>
+              <h2 class="card-trip-pricing">€<%=flat.price%></h2>
+            </div>
+            <%= link_to "Check details", flat_path(flat, check_in: @check_in, check_out: @check_out), class: "btn btn-success btn-sm" %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
 
 
     <div class="flats-container">
