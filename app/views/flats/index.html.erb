@@ -66,18 +66,12 @@
 
     <br>
 
-
-
-
-
   <div class="main-container">
-
    <div class="cards">
       <% @flats.each do |flat| %>
-      <div data-price='<%=flat.price%>' data-type='<%=flat.flat_type%>' class="flat">
-        <%= render 'shared/carousel', flat_id: flat.id, url1: "https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60", url2: "https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60", url3: "https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" %>
-
-        <!-- star rating -->
+   <div data-price='<%=flat.price%>' data-type='<%=flat.flat_type%>' class="flat">
+     <%= render 'shared/carousel', flat_id: flat.id, url1: flat.image_url, url2: flat.image_url2, url3: flat.image_url3 %>
+             <!-- star rating -->
         <small>
           <% unless flat.reviews.empty? %>
             <% count = 0 %>
@@ -96,14 +90,12 @@
             <% count += 1 %>
             <% end %>
           <% end %>
-        </small>
-
-
-        <h5><%= flat.title %> - <%= flat.location %></h5>
-        <p> <strong>€<%=flat.price%></strong> / night</p>
-        <%= link_to "Check details", flat_path(flat), class: "btn btn-success btn-sm" %>
-      </div>
-     <% end %>
+        </small> 
+     <h5><%= flat.title %> - <%= flat.location %></h5>
+     <p> <strong>€<%=flat.price%></strong> / night</p>
+     <%= link_to "Check details", flat_path(flat), class: "btn btn-success btn-sm" %>
+   </div>
+   <% end %>
    </div>
    <div id="map"
      style="width: 100%;"
