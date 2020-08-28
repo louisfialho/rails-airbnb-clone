@@ -3,7 +3,7 @@ class Flat < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :reviewed_users, through: :reviews, source: :user
 
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
   has_many :visitors, through: :bookings, source: :user
 
   belongs_to :host, class_name: "User"
