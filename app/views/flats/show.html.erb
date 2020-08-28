@@ -61,6 +61,7 @@
                 <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"/>
               </svg>
               <%end%>
+              (<%= @flat.reviews.count %>)
           <% else %>
             <p>No rating</p>
           <% end %>
@@ -84,7 +85,7 @@
           </div>
 
           <!-- review form -->
-          <%= simple_form_for [@flat, @review] do |f| %>
+          <%= simple_form_for([@flat, @review], remote: true) do |f| %>
             <%= f.input :rating, collection: 0..5, label: "Leave a Rating"%>
             <%= f.input :text, label:"Leave a Review" %>
             <%= f.submit class: 'btn btn-primary' %>
@@ -93,7 +94,7 @@
           <!-- list the reviews -->
           <div class='list-group thin-border-top mt-5 mb-5'>
             <% if @flat.reviews.count != 0 %>
-              <h3 class="mt-5" >Reviews</h3>
+              <h3 class="mt-5" ><%= @flat.reviews.count %> Reviews</h3>
               <% @flat.reviews.reverse.each do |review| %>
                 <li class="review-card list-group-item mt-3">
                   <div class="review-content">
@@ -130,7 +131,7 @@
                       <% end %>
                     </small>
                     <!-- Review text -->
-                    <p><%= review.text %></p>
+                    <p id="review-<%= review.id %>"><%= review.text %></p>
                 </li>
               <% end %>
             <% else %>
