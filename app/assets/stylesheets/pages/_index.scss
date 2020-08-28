@@ -16,28 +16,14 @@ h5 {
 
 #price-card, #type-card {
   position: absolute;
+  z-index: 1;
 }
 
 .main-container {
   position: relative;
 }
 
-#price-card {
-  border-radius: 10px;
-}
-
-#save-price {
+#price-card, #type-card, #save-price, #save-type, #minimum-price, #maximum-price {
   border-radius: 20px;
 }
 
-#save-type {
-  border-radius: 20px;
-}
-
-#minimum-price {
-  border-radius: 20px;
-}
-
-#maximum-price {
-  border-radius: 20px;
-}
