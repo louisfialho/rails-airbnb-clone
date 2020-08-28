@@ -13,3 +13,32 @@
 h5 {
   font-size: 15px;
 }
+
+#price-card, #type-card {
+  position: absolute;
+}
+
+.main-container {
+  position: relative;
+  z-index: -1;
+}
+
+#price-card {
+  border-radius: 10px;
+}
+
+#save-price {
+  border-radius: 20px;
+}
+
+#save-type {
+  border-radius: 20px;
+}
+
+#minimum-price {
+  border-radius: 20px;
+}
+
+#maximum-price {
+  border-radius: 20px;
+}
