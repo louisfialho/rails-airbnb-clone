@@ -25,6 +25,13 @@ require("channels")
 // External imports
 import "bootstrap";
 
+
+import { initMapbox } from '../plugins/init_mapbox';
+
+document.addEventListener('turbolinks:load', () => {
+  initMapbox();
+})
+
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -33,8 +40,8 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
 });
 
-console.log("Hello")
+import {price_filter} from './filter'
+import {type_filter} from './filter'
 
-import {filter} from './filter'
-
-filter()
+price_filter()
+type_filter()
