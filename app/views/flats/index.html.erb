@@ -65,11 +65,22 @@
     </div>
 
     <br>
-  <div class="main-container">
-    <div class="flats-container">
+
+    <div class="card-trip">
+          <img src="https://images.unsplash.com/photo-1522787345986-d5c7885a889e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1500&amp;q=80">
+          <div class="card-trip-infos">
+            <div>
+              <h2>Title here</h2>
+              <p>Short description here!</p>
+            </div>
+            <h2 class="card-trip-pricing">£99.99</h2>
+            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered">
+          </div>
+        </div>
+
+    <div class="flats-container col-6">
       <% @flats.each do |flat| %>
       <div data-price='<%=flat.price%>' data-type='<%=flat.flat_type%>' class="flat">
-        <div class="cards">
         <div class="card-trip">
           <%= render 'shared/carousel', flat_id: flat.id, url1: "https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60", url2: "https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60", url3: "https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" %>
           <div class="card-trip-infos">
@@ -82,14 +93,13 @@
           </div>
         </div>
       </div>
-      </div>
       <% end %>
     </div>
-    
-   <div id="map"
+
+<!--    <div id="map"
      style="width: 100%;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-   </div>
- </div>
+   </div> -->
+
 
