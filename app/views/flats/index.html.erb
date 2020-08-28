@@ -1,8 +1,87 @@
-<div class="filters">
-   <button type="button" id="first-filter" class="btn btn-outline-secondary">Price <50€</button>
-   <button type="button" class="btn btn-outline-secondary">Price <100€</button>
-   <button type="button" class="btn btn-outline-secondary">Price <150€</button>
-   <button type="button" class="btn btn-outline-secondary">Price <200€</button>
+<div class ="container">
+
+    <div class="filters">
+      <button type="button" id="price-filter" class="btn btn-outline-secondary">Price</button>
+      <button type="button" id="type-filter" class="btn btn-outline-secondary">Type</button>
+    </div>
+
+    <br>
+
+    <div class="card text-center" id="price-card" style="display: none">
+      <div class="card-body">
+        <h5 class="card-title">The average price per night is 55€</h5>
+
+        <div class="dual-input">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Minimum price</span>
+            </div>
+            <input type="text" class="form-control" id="minimum-price">
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Maximum price</span>
+            </div>
+            <input type="text" class="form-control" id="maximum-price">
+          </div>
+        </div>
+
+        <button type="button" id="save-price" class="btn btn-dark">Save</button>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="card text-center" id="type-card" style="display: none">
+
+      <br>
+
+      <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1" id="defaultText1">full accommodation</label>
+      </div>
+      <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+          <label class="form-check-label" for="defaultCheck2" id="defaultText2">private room</label>
+      </div>
+      <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+          <label class="form-check-label" for="defaultCheck3" id="defaultText3">hotel room</label>
+      </div>
+      <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
+          <label class="form-check-label" for="defaultCheck4" id="defaultText4">shared room</label>
+      </div>
+
+      <br>
+
+      <div>
+      <button type="button" id="save-type" class="btn btn-dark">Save</button>
+      </div>
+
+      <br>
+
+    </div>
+
+
+
+
+    <br>
+
+
+    <div class="flats-container">
+       <% @flats.each do |flat| %>
+       <div data-price='<%=flat.price%>' data-type='<%=flat.flat_type%>' class="flat">
+           <%= render 'shared/carousel', flat_id: flat.id, url1: "https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60", url2: "https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60", url3: "https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" %>
+           <i class="fas fa-star"></i>
+           <h5><%= flat.title %> - <%= flat.location %></h5>
+           <p> <strong>€<%=flat.price%></strong> / night</p>
+           <%= link_to "Check details", flat_path(flat, check_in: @check_in, check_out: @check_out), class: "btn btn-success btn-sm" %>
+       </div>
+      <% end %>
+    </div>
+    </div>
 </div>
 
  <div class="main-container">

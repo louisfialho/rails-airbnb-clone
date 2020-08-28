@@ -1,39 +1,75 @@
-export function filter() {
-  const filter = document.getElementById("first-filter");
+
+
+export function price_filter() {
+  const filter = document.getElementById("price-filter");
 
   filter.addEventListener("click", (event) => {
+    const card = document.getElementById("price-card");
+      if (card.style.display === "none") {
+        card.style.display = "";
+      } else {
+        card.style.display = "none";
+      }
 
-  document.querySelectorAll(".flat").forEach((flat) => {
-    if (flat.dataset.price > 50) {
-      flat.style.display = "none";
-    }
+    const save = document.getElementById("save-price");
+      save.addEventListener("click", (event) => {
+        card.style.display = "none";
+
+        document.querySelectorAll(".flat").forEach((flat) => {
+          const min = document.getElementById("minimum-price");
+          const max = document.getElementById("maximum-price");
+
+          if (flat.dataset.price > max.value || flat.dataset.price < min.value ) {
+            flat.style.display = "none";
+          }
+
+          filter.innerHTML = `${min.value}€ - ${max.value}€`;
+
+        });
+
+      });
   });
-
-});
 };
 
+export function type_filter() {
+  const filter = document.getElementById("type-filter");
+  filter.addEventListener("click", (event) => {
+    const card = document.getElementById("type-card");
+    if (card.style.display === "none") {
+        card.style.display = "";
+    } else {
+        card.style.display = "none";
+    }
 
-// container.insertAdjacentHTML("beforeend",
-//        <% @filtered_flats.each do |flat| %>
-//        <div class="flat">
-//            <%= render 'shared/carousel', flat_id: flat.id, url1: "https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60", url2: "https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60", url3: "https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" %>
-//            <i class="fas fa-star"></i>
-//            <h5><%= flat.title %> - <%= flat.location %></h5>
-//            <p><strong>€<%=flat.price%></strong> / night</p>
-//            <%= link_to "Check details", flat_path(flat), class: "btn btn-success btn-sm" %>
-//        </div>
-//       <% end %>
-// );
+    const save = document.getElementById("save-type");
 
-//   const flats = `<div class= "row message unread">
-//     <div class="col-xs-3">${message.sender}</div>
-//     <div class="col-xs-9">${message.subject}</div>
-//   </div>`;
+    let preferences = []
 
+    save.addEventListener("click", (event) => {
+        card.style.display = "none";
+        if (document.getElementById("defaultCheck1").checked == true) {
+          preferences.push(document.getElementById("defaultText1").innerHTML);
+        }
+        if (document.getElementById("defaultCheck2").checked == true) {
+          preferences.push(document.getElementById("defaultText2").innerHTML);
+        }
+        if (document.getElementById("defaultCheck3").checked == true) {
+          preferences.push(document.getElementById("defaultText3").innerHTML);
+        }
+        if (document.getElementById("defaultCheck4").checked == true) {
+          preferences.push(document.getElementById("defaultText4").innerHTML);
+        }
 
+          document.querySelectorAll(".flat").forEach((flat) => {
 
+          if (preferences.includes(flat.dataset.type) == false) {
+            flat.style.display = "none";
+          }
 
+          filter.innerHTML = `Type (${preferences.length})`;
 
-
-// Other options: hide non targeted flats
+        });
+  });
+});
+};
 

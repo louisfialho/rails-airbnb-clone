@@ -1,7 +1,15 @@
 class BookingsController < ApplicationController
+
   def new
     @flat = Flat.find(params[:flat_id])
     @booking = Booking.new
+    if params[:check_in].present? && params[:check_out].present?
+      @check_in = params[:check_in]
+      @check_out = params[:check_out]
+    else
+      @check_in = Date.today.strftime("%Y-%m-%d")
+      @check_out = (Date.today + 3).strftime("%Y-%m-%d")
+    end
   end
 
   def create
