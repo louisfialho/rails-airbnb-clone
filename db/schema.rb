@@ -36,6 +36,10 @@ ActiveRecord::Schema.define(version: 2020_08_27_153127) do
     t.bigint "host_id", null: false
     t.string "image_url"
     t.integer "capacity"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "address"
+    t.string "flat_type"
     t.index ["host_id"], name: "index_flats_on_host_id"
   end
 
