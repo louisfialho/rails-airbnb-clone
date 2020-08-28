@@ -18,12 +18,12 @@ christopher = User.new(first_name:"Christopher", role:"host", email:"christopher
 christopher.save!
 
 30.times do
-  flat = Flat.new(host:louis, flat_type: type.sample, title: Faker::Address.street_name, description: "Really nice flat in #{:location}", location: "London", price: rand(100.1000), image_url: "https://dqav65i4xqidd.cloudfront.net/app/uploads/20180519094708/t2-sete-rios-2.png", longitude: Faker::Address.longitude, latitude: Faker::Address.latitude, address: Faker::Address.full_address, capacity: rand(1..5))
+  flat = Flat.new(host:louis, flat_type: type.sample, title: Faker::Address.street_name, description: "Really nice flat in #{:location}", location: "London", price: rand(10..100), image_url: "https://dqav65i4xqidd.cloudfront.net/app/uploads/20180519094708/t2-sete-rios-2.png", longitude: Faker::Address.longitude, latitude: Faker::Address.latitude, address: Faker::Address.full_address, capacity: rand(1..5))
   flat.save!
 end
 
 30.times do
-  flat = Flat.new(host:louis,flat_type: type.sample, title: Faker::Address.street_name, description: "Really nice flat in #{:location}", location: "Paris", price: rand(100.1000), image_url: "https://dqav65i4xqidd.cloudfront.net/app/uploads/20180519094708/t2-sete-rios-2.png", longitude: Faker::Address.longitude, latitude: Faker::Address.latitude, address: Faker::Address.full_address, capacity: rand(1..5))
+  flat = Flat.new(host:louis,flat_type: type.sample, title: Faker::Address.street_name, description: "Really nice flat in #{:location}", location: "Paris", price: rand(10..100), image_url: "https://dqav65i4xqidd.cloudfront.net/app/uploads/20180519094708/t2-sete-rios-2.png", longitude: Faker::Address.longitude, latitude: Faker::Address.latitude, address: Faker::Address.full_address, capacity: rand(1..5))
   flat.save!
 end
 
