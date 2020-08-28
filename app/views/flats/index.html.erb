@@ -5,33 +5,23 @@
       <button type="button" id="type-filter" class="btn btn-outline-secondary">Type</button>
     </div>
 
-    <br>
-
     <div class="card text-center" id="price-card" style="display: none">
       <div class="card-body">
         <h5 class="card-title">The average price per night is 55€</h5>
 
         <div class="dual-input">
           <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">Minimum price</span>
-            </div>
-            <input type="text" class="form-control" id="minimum-price">
+            <input type="text" class="form-control" placeholder="Minimum price" id="minimum-price">
           </div>
 
           <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">Maximum price</span>
-            </div>
-            <input type="text" class="form-control" id="maximum-price">
+            <input type="text" class="form-control" placeholder="Maximum price" id="maximum-price">
           </div>
         </div>
 
         <button type="button" id="save-price" class="btn btn-dark">Save</button>
       </div>
     </div>
-
-    <br>
 
     <div class="card text-center" id="type-card" style="display: none">
 
@@ -57,30 +47,26 @@
       <br>
 
       <div>
-      <button type="button" id="save-type" class="btn btn-dark">Save</button>
+        <button type="button" id="save-type" class="btn btn-dark">Save</button>
       </div>
 
       <br>
 
     </div>
 
-    <br>
-
-
-
-
-
   <div class="main-container">
 
    <div class="cards">
       <% @flats.each do |flat| %>
    <div data-price='<%=flat.price%>' data-type='<%=flat.flat_type%>' class="flat">
+
     <div class="card-flat">
        <%= render 'shared/carousel', flat_id: flat.id, url1: "https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60", url2: "https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60", url3: "https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" %>
        <i class="fas fa-star"></i>
          <h5><%= flat.title %> - <%= flat.location %></h5>
          <p> <strong>€<%=flat.price%></strong> / night</p>
          <%= link_to "Check details", flat_path(flat), class: "btn btn-success btn-sm" %>
+
    </div>
  </div>
    <% end %>
@@ -90,6 +76,9 @@
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
    </div>
+
   </div>
 
 
+
+</div>
