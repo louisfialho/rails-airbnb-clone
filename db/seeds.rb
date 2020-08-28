@@ -8,13 +8,13 @@ puts "Creating flats..."
 
 type = ["full accommodation", "private room", "hotel room", "shared room" ]
 
-sean = User.new(first_name:"Sean", role:"visitor", email:"a@gmail.com", password:"abc123")
+sean = User.new(first_name:"Sean", role:"visitor", email:"a@gmail.com", password:"123456")
 sean.save!
-louis = User.new(first_name:"Louis", role:"host", email:"l@gmail.com", password:"abc123")
+louis = User.new(first_name:"Louis", role:"host", email:"l@gmail.com", password:"123456")
 louis.save!
 ricardo = User.new(first_name:"Ricardo", role:"host", email:"123@gmail.com", password:"123456")
 ricardo.save!
-christopher = User.new(first_name:"Christopher", role:"host", email:"christopher.nitsche@gmx.de", password:"12345")
+christopher = User.new(first_name:"Christopher", role:"host", email:"christopher.nitsche@gmx.de", password:"123456")
 christopher.save!
 
 30.times do
