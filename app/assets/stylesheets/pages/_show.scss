@@ -28,6 +28,8 @@
 
 #confirmation-card {
   border-radius: 5px 5px 0px 0px;
+  position: sticky;
+  top: 100px;
 }
 
 .card-description {
@@ -43,4 +45,8 @@
     border: 1px solid rgba(0,0,0,.125);
     border-radius: .25rem;
     margin-top: 20px;
+}
+
+.thin-border-top {
+  border-top: 1px solid rgb(221, 221, 221);
 }

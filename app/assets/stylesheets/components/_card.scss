@@ -3,12 +3,12 @@
 }
 
 .card {
-  border-radius: 25px 25px 6px 6px;
+  border-radius: 15px 15px 6px 6px;
 }
 
 
 .card img {
-    border-radius: 25px 25px 0px 0px;
+    border-radius: 15px 15px 0px 0px;
 }
 
 .card-booking .col-3 {
@@ -22,6 +22,28 @@
   padding: 50px;
 }
 
+
 #card-booking h4 {
   color: #FF8987;
 }
+
+.review-card {
+  margin-bottom: 8px;
+  background: white;
+  padding: 8px 16px;
+  border: 1px solid #ebebeb;
+  border-radius: 5px;
+  vertical-align: center;
+}
+
+.review-content {
+  display: flex;
+  align-items: center;
+}
+
+.review-avatar {
+  border-radius: 50%;
+  width: 50px;
+  vertical-align: text-top;
+}
+
