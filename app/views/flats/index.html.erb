@@ -71,6 +71,7 @@
 
 
   <div class="main-container">
+
    <div class="cards">
       <% @flats.each do |flat| %>
    <div data-price='<%=flat.price%>' data-type='<%=flat.flat_type%>' class="flat">
@@ -87,5 +88,6 @@
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
    </div>
+  </div>
 
 
