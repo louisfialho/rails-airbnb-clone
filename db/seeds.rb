@@ -6,11 +6,11 @@ require 'faker'
 
 puts "Creating flats..."
 
-sean = User.new(name:"Sean", role:"visitor", email:"a@gmail.com", password:"abc123")
+sean = User.new(first_name:"Sean", role:"visitor", email:"a@gmail.com", password:"abc123")
 sean.save!
-louis = User.new(name:"Louis", role:"host", email:"l@gmail.com", password:"abc123")
+louis = User.new(first_name:"Louis", role:"host", email:"l@gmail.com", password:"abc123")
 louis.save!
-ricardo = User.new(name:"Ricardo", role:"host", email:"123@gmail.com", password:"123456")
+ricardo = User.new(first_name:"Ricardo", role:"host", email:"123@gmail.com", password:"123456")
 louis.save!
 
 30.times do
