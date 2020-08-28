@@ -27,3 +27,14 @@ h5 {
   border-radius: 20px;
 }
 
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+.card-top {
+  padding-left: 10px;
+}
