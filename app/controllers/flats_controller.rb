@@ -15,6 +15,15 @@ class FlatsController < ApplicationController
         @flats = Flat.where("location ILIKE ?", @location)
       end
     end
+
+     @markers = @flats.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { flat: flat }),
+        image_url: helpers.asset_url('marker.png')
+      }
+    end
   end
 
   def show

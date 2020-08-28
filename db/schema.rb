@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2020_08_27_153127) do
 
   # These are extensions that must be enabled in order to support this database
@@ -35,6 +36,9 @@ ActiveRecord::Schema.define(version: 2020_08_27_153127) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "host_id", null: false
     t.string "image_url"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "address"
     t.integer "capacity"
     t.string "flat_type"
     t.index ["host_id"], name: "index_flats_on_host_id"
