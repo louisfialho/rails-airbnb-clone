@@ -5,7 +5,7 @@ class ReviewsController < ApplicationController
     @review.flat = @flat
     @review.user_id = current_user.id
     if @review.save
-      redirect_to flat_path(@flat, anchor: "review-#{@review.id}")
+      redirect_to flat_path(@flat, anchor: "anchor")
     else
       redirect_to flat_path(@flat)
     end
