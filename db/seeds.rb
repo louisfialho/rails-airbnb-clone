@@ -17,7 +17,7 @@ ricardo.save!
 christopher = User.new(first_name:"Christopher", role:"host", email:"christopher.nitsche@gmx.de", password:"123456")
 christopher.save!
 
-my_array = ["kitchen" , "bedroom", "living_room", "floor"]
+my_array = ["flat_interior"]
 30.times do
   flat = Flat.new(host:louis, flat_type: type.sample, title: Faker::Address.street_name, description: "Really nice flat in #{:location}", location: "London", price: rand(100.1000), image_url: "https://source.unsplash.com/692x459/?#{my_array[rand(0..3)]}", image_url2: "https://source.unsplash.com/692x459/?#{my_array[rand(0..3)]}", image_url3: "https://source.unsplash.com/692x459/?#{my_array[rand(0..3)]}", longitude: Faker::Address.longitude, latitude: Faker::Address.latitude, address: Faker::Address.full_address, capacity: rand(1..5))
   flat.save!
