@@ -53,8 +53,6 @@
       <br>
 
     </div>
-  
-    <br>
 
   <div class="main-container">
    <div class="cards">
@@ -80,7 +78,7 @@
             <% count += 1 %>
             <% end %>
           <% end %>
-        </small> 
+        </small>
      <h5><%= flat.title %> - <%= flat.location %></h5>
      <p> <strong>€<%=flat.price%></strong> / night</p>
      <%= link_to "Check details", flat_path(flat), class: "btn btn-success btn-sm" %>
