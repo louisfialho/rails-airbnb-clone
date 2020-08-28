@@ -40,6 +40,11 @@ ActiveRecord::Schema.define(version: 2020_08_27_153127) do
     t.float "longitude"
     t.string "address"
     t.string "flat_type"
+<<<<<<< Updated upstream
+=======
+    t.string "image_url2"
+    t.string "image_url3"
+>>>>>>> Stashed changes
     t.index ["host_id"], name: "index_flats_on_host_id"
   end
 
